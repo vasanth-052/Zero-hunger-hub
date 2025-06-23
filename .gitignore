@@ -6,3 +6,4 @@ backend/.env
 backend/.gitignore
 backend/index.js
 backend/seed.sh
+.env
