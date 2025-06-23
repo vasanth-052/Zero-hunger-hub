@@ -2,7 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
-const FoodBank = require('../models/Foodbank');
+const FoodBank = require('../models/FoodBank');
 
 // GET all food banks
 router.get('/', (req, res) => {
