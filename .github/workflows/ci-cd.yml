@@ -1,0 +1,65 @@
+name: MERN CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    services:
+      mongo:
+        image: mongo:5
+        ports:
+          - 27017:27017
+        options: >-
+          --health-cmd="mongo --eval 'db.runCommand({ ping: 1 })'"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+
+    steps:
+    - name: Checkout code
+      uses: actions?checkout@v4
+
+    - name: Set up Node.js 
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+
+   
+    - name: Install Backend Dependencies
+      working-directory: ./backend
+      run: npm install
+
+
+    - name: Install Frontend Dependencies
+      working-directory: ./client
+      run: npm install
+
+    - name: Run Backend Tests
+      working-directory: ./backend
+      run: npm test
+
+  
+    - name: Run Frontend Tests
+      working-directory: ./client
+      run: npm test
+
+
+    - name: Build Backend 
+      working-directory: ./backend
+      run: npm run build
+
+    - name: Build Frontend
+      working-directory: ./client
+      run: npm run build
+
+
+  
+    - name: Deployment Placeholder
+      run: echo "Add deployment scripts here "

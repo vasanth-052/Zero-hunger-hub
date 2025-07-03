@@ -1,9 +1,1 @@
 client/node_modules
-client/.gitignore
-
-backend/node_modules
-backend/.env
-backend/.gitignore
-backend/index.js
-backend/seed.sh
-.env
