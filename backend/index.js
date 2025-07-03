@@ -10,7 +10,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-// MongoDB Connection
+
 const mongoURI = process.env.MONGO_URI || 'mongodb://localhost:27017/zero-hunger-hub';
 
 mongoose
