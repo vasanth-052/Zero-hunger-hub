@@ -65,10 +65,10 @@ jobs:
       run: echo "Add deployment scripts here "
 
     - name: Build and Push Docker Image
-  uses: mr-smithers-excellent/docker-build-push@v4
-  with:
-  image: vasanth2003/zero-hunger-hub
-  username: ${{ secrets.DOCKER_USERNAME }}
-  password: ${{ secrets.DOCKER_PASSWORD }}
-
+      uses: mr-smithers-excellent/docker-build-push@v4
+      with:
+      image: vasanth2003/zero-hunger-hub
+      tags: latest
+      username: ${{ secrets.DOCKER_USERNAME }}
+      password: ${{ secrets.DOCKER_PASSWORD }}
 
