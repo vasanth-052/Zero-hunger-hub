@@ -16,7 +16,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+      "build": "echo \"No frontend build needed\"",
     
     "eject": "react-scripts eject",
      "test": "echo \"No frontend tests yet\" && exit 0"
