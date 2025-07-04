@@ -63,6 +63,8 @@ jobs:
         with:
           image: vasanth2003/zero-hunger-hub
           tag: latest
+          dockerfile: ./backend/Dockerfile
+          directory: ./backend
           registry: docker.io
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
